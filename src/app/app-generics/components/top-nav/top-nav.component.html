@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<header class="top-nav-header">
+
+  <div class="header-title">
+    <h1><a routerLinkActive="Active" routerLink="/home">{{ headerTitle }}</a></h1>
+  </div>
+  <div class="header-menu">
+    <ul>
+      <li>
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
+      <li>
+        <a routerLink="/category" routerLinkActive="active">Products</a>
+      </li>
+     
+      <li>
+        <a routerLink="/profile" routerLinkActive="active">Profile</a>
+      </li>
+      <li>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </li>
+      <li class="search">
+        <input  style="width:300px; height:25px; border-radius:25px; border: none;" *ngIf="showMe" type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder=" search...">
+        <a (click)="toggleTag()" id="search-btn"  class="fas fa-search"></a>
+      </li>
+      <li>
+        <a routerLink="cart" id="cart-btn" class="fas fa-cart-plus"></a>
+        <a style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</a>
+      </li>
+      <li>
+        <a routerLink="/profile" id="login-btn" class="fas fa-user"></a>
+      </li>
+    </ul>
+  </div>
+
+</header>

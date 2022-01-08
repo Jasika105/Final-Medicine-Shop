@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border:none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+$green: #bac34e;
+$black: #222;
+$white: #fff;
+$light-color: #666;
+$light-bg: #f3f3f3;
+$border: .1rem solid rgba(0, 0, 0, .1);
+$box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 1.5rem;
+}
+.top-nav-header {
+  padding: 20px;
+  background-color: #2d99e3;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+
+.top-nav-header a,
+.top-nav-header a:active,
+.top-nav-header a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.top-nav-header .header-title h1 {
+  font-size: 20px;
+  color: white;
+}
+
+.top-nav-header .header-title {
+  width: 50%;
+  float: left;
+}
+
+.top-nav-header .header-menu ul > li {
+  list-style: none;
+  display: inline;
+  margin-right: 25px;
+  width: 15px;
+
+  #search-btn{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  #cart-btn{
+    font-size: 1.2rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  #login-btn{
+    font-size: 1.2rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}

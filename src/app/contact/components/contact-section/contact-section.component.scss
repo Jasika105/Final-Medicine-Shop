@@ -1,0 +1,33 @@
+.contact .contact-form-wrapper {
+  width: 1000px;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .card-padding {
+    padding: 40px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .margin {
+    font-size:18px;
+   
+ 
+  }
+}
+
+.margin-top-16 {
+  margin-top:16px;
+  
+
+}
+
+.header-logo {
+  width: 50px;
+}
+
+

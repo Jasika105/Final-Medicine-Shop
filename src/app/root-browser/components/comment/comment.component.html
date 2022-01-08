@@ -1,0 +1,14 @@
+<div class="simplex">
+  <div class="container">
+    <input [(ngModel)]="comment" type="text" id="input" placeholder="write your comment here">
+    <a routerLink="/category"><button type="button" name="button" id="back">back</button></a>
+    <button (click)="post()" type="button" name="button" id="comment">comment</button>
+
+    <div class="box-container">
+      <div class="box"><div *ngFor="let comments of postComment">
+        <p>{{comments}}</p>
+      </div></div>
+    </div>
+  </div>
+ </div>
+

@@ -1,0 +1,74 @@
+<div class="contact">
+  <div class="contact-form-wrapper">
+
+    <div class="margin">
+      <h2>Contact Information</h2><br>
+      <p><b>▶ For general query:</b></p>
+      <p> info@medicine.com.bd </p><br>
+      <p><b>▶ To update product information of your company:</b></p>
+      <a> support@medicine.com.bd </a>
+    </div><br><br><br>
+
+    <div class="margin">
+      <h2>Feedback</h2><br>
+      <p>Write to us for any Query,Complaint or Suggestion regarding Medicine-Center.</p><br><br>
+    </div>
+
+    <mat-card class="card-padding">
+
+      <form [formGroup]="contactForm" (ngSubmit)="onContactFormSubmit()">
+
+        <mat-form-field class="margin-top-16">
+          <mat-label>Name *</mat-label>
+          <input matInput formControlName="Name" placeholder="John">
+
+          <mat-error>
+            <p *ngIf="contactForm.controls.Name.hasError('required')">First name is required</p>
+            <p *ngIf="contactForm.controls.Name.hasError('maxlength')">Maximum character limit 50</p>
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field class="margin-top-16">
+          <mat-label>Email Address *</mat-label>
+          <input matInput formControlName="Email" placeholder="Email">
+
+          <mat-error>
+            <p *ngIf="contactForm.controls.Email.hasError('required')">Email address is required</p>
+            <p *ngIf="contactForm.controls.Email.hasError('email')">Invalid Email Address</p>
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field class="margin-top-16">
+          <mat-label>Contact Number *</mat-label>
+          <input matInput formControlName="PhoneNumber" placeholder="+880xxxxxxxxxx">
+
+          <mat-error>
+            <p *ngIf="contactForm.controls.PhoneNumber.hasError('required')">Phone number is required</p>
+            <p *ngIf="contactForm.controls.PhoneNumber.hasError('minlength')">Password needs to be at least 10 character long</p>
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field class="margin-top-16">
+          <mat-label>Message *</mat-label>
+          <textarea matInput formControlName="Message" placeholder="Type a message..."></textarea>
+
+          <mat-error>
+            <p *ngIf="contactForm.controls.Message.hasError('required')">Message is required</p>
+            <p *ngIf="contactForm.controls.Message.hasError('maxlength')">Maximum character limit 50</p>
+          </mat-error>
+
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="margin-top-16" [disabled]="contactForm.invalid" type="submit">Submit</button>
+
+      </form>
+
+    </mat-card>
+
+  </div>
+
+</div>
+

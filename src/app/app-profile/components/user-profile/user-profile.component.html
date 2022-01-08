@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="Padding-card">
+  <h2 style="text-align:center">My Profile</h2>
+
+  <div class="card" *ngIf="user">
+    <img src="assets/img/profile-default-image.png">
+    <h1>{{ user.FirstName }} {{ user.LastName }}</h1>
+    <p>Email: {{ user.Email }}</p>
+    <p>Phone Number: {{ user.PhoneNumber }}</p>
+    <p>Roles: {{ user.Roles.join(", ") }}</p>
+    <div style="margin: 24px 0;">
+      <a href="#"><i class="fa fa-dribbble"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+    </div>
+    <p><button>Contact</button></p>
+  </div>
+
+</div>

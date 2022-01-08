@@ -1,0 +1,51 @@
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+      <a (click)="filter('')">
+        <img style="width: 80px; margin-top: 7px;"  src="assets/img/picxy.jpg" alt="">
+        <h6>All products</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img style="width: 60px; margin-top: 5px;" src="https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/https://emedi.com.bd/wp-content/uploads/2020/10/91822-1.jpg" alt="">
+        <h6>Antiseptics</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img style="width: 60px; margin-top: 5px;" src="https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/https://emedi.com.bd/wp-content/uploads/2018/10/MOLFIX-3-MIDI-4-9KG-20PCS.jpg" alt="">
+        <h6>Baby Diapers</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img style="width: 70px; margin-top: 10px;" src="https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/https://emedi.com.bd/wp-content/uploads/2021/04/Aliksir-Soft-Gelatin-Capsule.jpg" alt="">
+        <h6>Hair Care</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img style="width: 80px; margin-top: 17px;" src="https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/https://emedi.com.bd/wp-content/uploads/2020/09/ANCLOG-75.jpg" alt="">
+        <h6>Diabetic Care</h6>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of productList | filter:searchKey:'title'">
+      <div class="card col-md-3">
+        <img src="{{item.image}}" alt="">
+        <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.title}}</h5>
+        <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.description}}</p>
+        <p><strong>Price:</strong> ${{item.price}}</p>
+        <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button><br>
+        <a routerLink="/comment"><i class='fas fa-comment fa-lg'> Review</i></a>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
